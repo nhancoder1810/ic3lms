@@ -1,0 +1,235 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bannerPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a3e 0%, #7c3aed 50%, #00d4ff 100%);
+}
+
+/* Header */
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.badgeSpark {
+  background: rgba(0, 255, 136, 0.15);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.badgeGs6 {
+  background: rgba(124, 58, 237, 0.2);
+  color: #b794f6;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #e0e0ff;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.teacherInfo {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(224, 224, 255, 0.6);
+  margin: 0;
+}
+
+/* Stats row */
+.stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(0, 212, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(224, 224, 255, 0.7);
+}
+
+.statIcon {
+  color: #00d4ff;
+  font-size: 1.1rem;
+}
+
+.statValue {
+  font-weight: 700;
+  color: #e0e0ff;
+  margin-right: 0.25rem;
+}
+
+/* Description */
+.description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(224, 224, 255, 0.75);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Modules accordion */
+.modulesTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  color: #e0e0ff;
+  margin: 0 0 1rem;
+}
+
+.moduleItem {
+  background: #12122a;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.moduleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.moduleHeader:hover {
+  background: #1a1a3e;
+}
+
+.moduleTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e0e0ff;
+}
+
+.chevron {
+  color: #00d4ff;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.lessonsList {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.15rem 0.75rem;
+}
+
+.lessonItem {
+  padding: 0.5rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(224, 224, 255, 0.6);
+  border-top: 1px solid rgba(0, 212, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lessonIcon {
+  color: #00d4ff;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Enroll button */
+.enrollBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.9rem 2.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0a0a1a;
+  background: #00d4ff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.enrollBtn:hover {
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.5), 0 0 48px rgba(0, 212, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.enrollBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.unenrollBtn {
+  composes: enrollBtn;
+  background: #1a1a3e;
+  color: #ff3366;
+  border: 1px solid rgba(255, 51, 102, 0.4);
+}
+
+.unenrollBtn:hover {
+  box-shadow: 0 0 24px rgba(255, 51, 102, 0.35);
+}
+
+@media (max-width: 640px) {
+  .banner {
+    height: 180px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .stats {
+    gap: 1rem;
+  }
+}

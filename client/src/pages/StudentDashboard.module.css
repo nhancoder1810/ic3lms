@@ -1,0 +1,214 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.welcomeHero {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--card-shadow);
+  gap: 16px;
+}
+
+.welcomeInfo {
+  max-width: 70%;
+}
+
+.heroTitle {
+  font-size: 1.45rem;
+  color: var(--text-primary);
+}
+
+.neonName {
+  color: var(--accent-primary);
+}
+
+.heroDesc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-top: 6px;
+}
+
+.streakCard {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fireIcon {
+  font-size: 1.75rem;
+  color: var(--accent-yellow);
+}
+
+.streakText {
+  display: flex;
+  flex-direction: column;
+}
+
+.streakDays {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.streakLabel {
+  font-size: 0.75rem;
+  color: var(--accent-yellow);
+  font-weight: 600;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+.gridCol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionTitle h3 {
+  font-size: 1.08rem;
+  color: var(--text-primary);
+}
+
+.headerIcon {
+  color: var(--accent-primary);
+}
+
+.viewAll {
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.courseCards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.courseCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+}
+
+.thumb {
+  width: 115px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.courseDetails {
+  flex: 1;
+}
+
+.courseTitle {
+  font-size: 0.96rem;
+  margin: 6px 0 4px;
+  color: var(--text-primary);
+}
+
+.quizList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quizItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.quizLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quizIconWrap {
+  width: 38px;
+  height: 38px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.quizName {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.quizMeta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.emptyCard {
+  background: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .welcomeHero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .welcomeInfo {
+    max-width: 100%;
+  }
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}

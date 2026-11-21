@@ -1,0 +1,40 @@
+import api from './api';
+
+export const userService = {
+  getLeaderboard: async () => {
+    const res = await api.get('/users/leaderboard');
+    return res.data;
+  },
+
+  getStudents: async (params) => {
+    const res = await api.get('/users/students', { params });
+    return res.data;
+  },
+
+  getUsers: async (params) => {
+    const res = await api.get('/users', { params });
+    return res.data;
+  },
+
+  getUser: async (id) => {
+    const res = await api.get(`/users/${id}`);
+    return res.data;
+  },
+
+  createUser: async (userData) => {
+    const res = await api.post('/users', userData);
+    return res.data;
+  },
+
+  updateUser: async (id, userData) => {
+    const res = await api.put(`/users/${id}`, userData);
+    return res.data;
+  },
+
+  deleteUser: async (id) => {
+    const res = await api.delete(`/users/${id}`);
+    return res.data;
+  },
+};
+
+export default userService;

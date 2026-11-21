@@ -1,0 +1,155 @@
+.formCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 100%;
+  box-shadow: var(--card-shadow);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin: 0 auto 14px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.errorAlert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: var(--accent-red);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  transition: all 0.2s;
+}
+
+.inputWrap:focus-within {
+  border-color: var(--accent-primary);
+}
+
+.fieldIcon {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-right: 10px;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 11px 0;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.select {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.quickAccess {
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quickLabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.quickBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.quickBtn {
+  flex: 1;
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.quickBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.link {
+  color: var(--accent-primary);
+  font-weight: 600;
+}

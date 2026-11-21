@@ -1,0 +1,31 @@
+.footer {
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-card);
+  padding: 20px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: auto;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.copy strong {
+  color: var(--accent-primary);
+}
+
+.tags {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.tags span {
+  color: var(--text-muted);
+}

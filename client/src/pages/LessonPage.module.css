@@ -1,0 +1,202 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.contentCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--card-shadow);
+}
+
+.header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-top: 12px;
+}
+
+.meta {
+  display: flex;
+  gap: 20px;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  margin-top: 10px;
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lessonBody {
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.lessonBody h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin: 26px 0 12px;
+}
+
+.lessonBody p {
+  margin-bottom: 14px;
+  color: var(--text-secondary);
+}
+
+.lessonBody ul,
+.lessonBody ol {
+  margin-left: 22px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.lessonBody li {
+  margin-bottom: 8px;
+}
+
+.lessonBody li strong {
+  color: var(--text-primary);
+}
+
+.lessonBody code {
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--accent-primary);
+}
+
+.lessonBody table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.lessonBody th {
+  background: var(--bg-card-alt);
+  color: var(--text-primary);
+  font-weight: 700;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.lessonBody td {
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.footerAction {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+}
+
+.completedAlert {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.checkIcon {
+  font-size: 1.8rem;
+  color: var(--accent-green);
+}
+
+.completedAlert strong {
+  display: block;
+  color: var(--accent-green);
+  font-size: 0.98rem;
+}
+
+.completedAlert p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.quizSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: var(--card-shadow);
+}
+
+.quizSectionTitle {
+  font-size: 1.12rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.quizGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quizCard {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.quizName {
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  margin: 6px 0 2px;
+}
+
+.quizMeta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

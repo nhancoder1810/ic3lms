@@ -1,0 +1,335 @@
+.chatContainer {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.chatHeader {
+  background: var(--bg-card-alt);
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.chatIcon {
+  color: var(--accent-primary);
+}
+
+.roomDesc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  outline: none;
+  width: 140px;
+}
+
+.statusOnline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.onlineDot {
+  font-size: 0.5rem;
+}
+
+.promptsBar {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.promptLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  white-space: nowrap;
+}
+
+.promptChips {
+  display: flex;
+  gap: 8px;
+}
+
+.promptChip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.promptChip:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.messagesList {
+  flex: 1;
+  padding: 18px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emptyState {
+  margin: auto;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 32px;
+}
+
+.messageItem {
+  display: flex;
+  gap: 10px;
+  max-width: 82%;
+}
+
+.myMessage {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.theirMessage {
+  align-self: flex-start;
+}
+
+.msgAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  flex-shrink: 0;
+  background: var(--bg-card-alt);
+}
+
+.msgContentWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.myMessage .msgContentWrap {
+  align-items: flex-end;
+}
+
+.msgMetaTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.senderName {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.roleTeacher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(79, 70, 229, 0.12);
+  color: var(--accent-secondary);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.roleAdmin {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-yellow);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.roleStudent {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--bg-card-alt);
+  color: var(--text-muted);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.msgTime {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.deleteBtn:hover {
+  color: var(--accent-red);
+}
+
+.msgBubble {
+  padding: 11px 15px;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.myMessage .msgBubble {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.theirMessage .msgBubble {
+  background: var(--bg-card-alt);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 2px;
+}
+
+.typingIndicator {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 4px 8px;
+}
+
+.inputArea {
+  display: flex;
+  padding: 14px 16px;
+  background: var(--bg-card-alt);
+  border-top: 1px solid var(--border-color);
+  gap: 10px;
+}
+
+.inputBox {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.inputBox:focus {
+  border-color: var(--accent-primary);
+}
+
+.sendBtn {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.guestBar {
+  padding: 14px 20px;
+  background: var(--bg-card-alt);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.guestBtns {
+  display: flex;
+  gap: 10px;
+}

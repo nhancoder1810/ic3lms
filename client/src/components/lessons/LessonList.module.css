@@ -1,0 +1,125 @@
+.container {
+  background: #12122a;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.scrollArea {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.5rem 0;
+}
+
+.scrollArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 3px;
+}
+
+.module {
+  margin-bottom: 0.25rem;
+}
+
+.moduleHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: #e0e0ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.moduleHeader:hover {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.chevron {
+  transition: transform 0.2s;
+  color: #00d4ff;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  composes: chevron;
+  transform: rotate(90deg);
+}
+
+.moduleTitle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lessonsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lessonItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem 0.55rem 2rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(224, 224, 255, 0.7);
+  transition: background 0.15s, color 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.lessonItem:hover {
+  background: rgba(0, 212, 255, 0.05);
+  color: #e0e0ff;
+}
+
+.lessonItemActive {
+  composes: lessonItem;
+  border-left-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.08);
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+.statusIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completedIcon {
+  color: #00ff88;
+}
+
+.incompleteIcon {
+  color: rgba(224, 224, 255, 0.25);
+}
+
+.lessonTitle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

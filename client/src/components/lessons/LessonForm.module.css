@@ -1,0 +1,116 @@
+.container {
+  background: #12122a;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  padding: 2rem;
+}
+
+.heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: #e0e0ff;
+  margin: 0 0 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(224, 224, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input {
+  padding: 0.65rem 0.85rem;
+  background: #1a1a3e;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 8px;
+  color: #e0e0ff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+}
+
+.input::placeholder {
+  color: rgba(224, 224, 255, 0.3);
+}
+
+.textarea {
+  composes: input;
+  min-height: 280px;
+  resize: vertical;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.select {
+  composes: input;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2300d4ff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.5rem;
+}
+
+.select option {
+  background: #1a1a3e;
+  color: #e0e0ff;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.row > .field {
+  flex: 1;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 2rem;
+  background: #00d4ff;
+  color: #0a0a1a;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow 0.2s, opacity 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
