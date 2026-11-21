@@ -65,3 +65,8 @@ Truy cập ứng dụng tại: **http://localhost:5173**
 | **🎮 Học sinh (Student)** | `student1@ic3lms.edu.vn` | `123456` |
 
 *(Ngoài ra trên màn hình Đăng nhập có sẵn 3 nút điền nhanh tài khoản mẫu để bạn trải nghiệm ngay lập tức!)*
+
+---
+
+## © Bản Quyền (Copyright)
+© 2026 **Trivitec Company**. All rights reserved.
