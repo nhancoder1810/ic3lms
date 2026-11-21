@@ -7,14 +7,24 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
   min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--text-primary);
+  word-break: break-word;
 }
 
 a {
@@ -61,41 +72,57 @@ button {
   background: var(--text-muted);
 }
 
-/* Modern LMS Buttons */
+/* Modern LMS Buttons - Consistent Sizing & Touch Targets */
 .btn-cyber {
   background: var(--accent-primary);
   color: #ffffff;
   padding: 10px 20px;
+  min-height: 40px;
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 0.9rem;
+  line-height: 1.2;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  white-space: nowrap;
   box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+  border: 1px solid transparent;
 }
 
-.btn-cyber:hover {
+.btn-cyber:hover:not(:disabled) {
   background: var(--accent-primary-hover);
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
+.btn-cyber:disabled,
+.btn-neon:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn-neon {
   background: var(--bg-card);
   color: var(--accent-primary);
   border: 1px solid var(--border-color);
-  padding: 9px 18px;
+  padding: 10px 18px;
+  min-height: 40px;
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 0.9rem;
+  line-height: 1.2;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
-.btn-neon:hover {
+.btn-neon:hover:not(:disabled) {
   background: var(--bg-card-alt);
   border-color: var(--accent-primary);
   color: var(--accent-primary-hover);
@@ -109,6 +136,7 @@ button {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .badge-spark {
@@ -121,4 +149,18 @@ button {
   background: rgba(37, 99, 235, 0.12);
   color: var(--accent-primary);
   border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 640px) {
+  .btn-cyber,
+  .btn-neon {
+    padding: 9px 14px;
+    min-height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .badge-tag {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
 }

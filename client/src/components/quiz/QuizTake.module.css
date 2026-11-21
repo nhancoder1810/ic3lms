@@ -2,7 +2,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 26px;
   box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
@@ -31,13 +31,14 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .qBadgeWrap {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .pointsTag {
@@ -51,7 +52,7 @@
   align-items: center;
   gap: 6px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--accent-primary);
   background: var(--bg-card-alt);
   padding: 6px 14px;
@@ -71,8 +72,8 @@
 }
 
 .dotBtn {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   background: var(--bg-card-alt);
@@ -113,14 +114,14 @@
 }
 
 .questionArea {
-  margin-top: 8px;
+  margin-top: 6px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .questionText {
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.5;
@@ -129,11 +130,22 @@
 .navigation {
   display: flex;
   align-items: center;
-  margin-top: 16px;
-  padding-top: 18px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 16px;
   border-top: 1px solid var(--border-color);
 }
 
 .spacer {
   flex: 1;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 18px 14px;
+  }
+  .questionText {
+    font-size: 1rem;
+  }
 }

@@ -3,8 +3,8 @@
   background: var(--bg-sidebar);
   border-right: 1px solid var(--border-color);
   padding: 20px 12px;
-  min-height: calc(100vh - 68px);
-  transition: all 0.25s ease;
+  min-height: calc(100vh - 64px);
+  transition: transform 0.25s ease, margin-left 0.25s ease;
   flex-shrink: 0;
 }
 
@@ -44,6 +44,7 @@
   font-size: 1.05rem;
   color: var(--text-muted);
   transition: all 0.15s;
+  flex-shrink: 0;
 }
 
 .menuItem:hover {
@@ -65,13 +66,21 @@
   color: var(--accent-primary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .sidebar {
     position: fixed;
-    top: 68px;
+    top: 64px;
     bottom: 0;
     left: 0;
     z-index: 999;
+    margin-left: 0;
+    transform: translateX(0);
     box-shadow: var(--card-shadow-hover);
+    overflow-y: auto;
+  }
+
+  .collapsed {
+    margin-left: 0;
+    transform: translateX(-100%);
   }
 }

@@ -79,14 +79,23 @@ export default function ChatPage() {
   const activeRoomInfo = rooms.find((r) => r.id === currentRoom) || DEFAULT_ROOMS[0];
 
   return (
-    <div style={{ maxWidth: '1250px', margin: '0 auto', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        maxWidth: '1250px',
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+        gap: '20px',
+        alignItems: 'start',
+      }}
+    >
       {/* Left Sidebar: Channels & Online Support */}
       <div
         style={{
-          width: '280px',
           display: 'flex',
           flexDirection: 'column',
           gap: '16px',
+          gridColumn: 'span 1',
         }}
       >
         <div
@@ -107,6 +116,7 @@ export default function ChatPage() {
               alignItems: 'center',
               justifyContent: 'space-between',
               marginBottom: '4px',
+              gap: '8px',
             }}
           >
             <div
@@ -129,9 +139,9 @@ export default function ChatPage() {
                   background: 'var(--bg-card-alt)',
                   border: '1px solid var(--border-color)',
                   color: 'var(--accent-primary)',
-                  padding: '4px 8px',
+                  padding: '5px 10px',
                   borderRadius: '6px',
-                  fontSize: '0.75rem',
+                  fontSize: '0.76rem',
                   fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',
@@ -152,6 +162,7 @@ export default function ChatPage() {
                 placeholder="Tên nhóm học tập..."
                 style={{
                   flex: 1,
+                  minWidth: 0,
                   padding: '7px 10px',
                   borderRadius: '6px',
                   border: '1px solid var(--border-color)',
@@ -160,7 +171,7 @@ export default function ChatPage() {
                   fontSize: '0.82rem',
                 }}
               />
-              <button type="submit" className="btn-cyber" style={{ padding: '6px 10px', fontSize: '0.78rem' }}>
+              <button type="submit" className="btn-cyber" style={{ padding: '6px 12px', fontSize: '0.78rem', minHeight: '34px' }}>
                 Tạo
               </button>
             </form>
@@ -187,8 +198,8 @@ export default function ChatPage() {
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <FaComments />
-                {r.name}
+                <FaComments style={{ flexShrink: 0 }} />
+                <span>{r.name}</span>
               </span>
             </button>
           ))}
@@ -207,13 +218,22 @@ export default function ChatPage() {
             gap: '12px',
           }}
         >
-          <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div
+            style={{
+              fontSize: '0.84rem',
+              fontWeight: 700,
+              color: 'var(--text-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
             <FaChalkboardTeacher style={{ color: 'var(--accent-primary)' }} /> BAN GIẢNG VIÊN & HỖ TRỢ
           </div>
           {[
-            { name: 'Thầy Nguyễn Văn An', role: 'Giảng viên IC3 GS6 & Spark', status: 'Đang trực tuyến' },
-            { name: 'Trần Minh Quân', role: 'Học viên lớp IC3 GS6', status: 'Đang học bài' },
-            { name: 'Lê Thu Trang', role: 'Học viên lớp IC3 Spark', status: 'Đang luyện đề' },
+            { name: 'Thầy Nguyễn Văn An', role: 'Giảng viên IC3 GS6 & Spark' },
+            { name: 'Trần Minh Quân', role: 'Học viên lớp IC3 GS6' },
+            { name: 'Lê Thu Trang', role: 'Học viên lớp IC3 Spark' },
           ].map((member, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.82rem' }}>
               <FaCircle style={{ color: 'var(--accent-green)', fontSize: '0.55rem', flexShrink: 0 }} />
@@ -227,7 +247,7 @@ export default function ChatPage() {
       </div>
 
       {/* Main Chat Room */}
-      <div style={{ flex: 1, minWidth: '320px' }}>
+      <div style={{ gridColumn: 'span 2', minWidth: 0 }}>
         <ChatRoom currentRoom={currentRoom} roomInfo={activeRoomInfo} />
       </div>
     </div>

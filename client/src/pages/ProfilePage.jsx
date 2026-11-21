@@ -23,10 +23,11 @@ export default function ProfilePage() {
           background: 'var(--bg-card)',
           border: '1px solid var(--border-color)',
           borderRadius: 'var(--radius-lg)',
-          padding: '28px 32px',
+          padding: 'clamp(18px, 3vw, 28px)',
           display: 'flex',
           alignItems: 'center',
-          gap: '24px',
+          flexWrap: 'wrap',
+          gap: '20px',
           boxShadow: 'var(--card-shadow)',
         }}
       >

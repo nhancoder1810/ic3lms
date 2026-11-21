@@ -5,13 +5,13 @@ const TrueFalse = ({ selectedAnswer, onAnswer }) => {
     const isSelected = selectedAnswer === value;
     const activeColor = value === 'true' ? 'var(--accent-green)' : 'var(--accent-red)';
     return {
-      flex: 1,
-      padding: '22px 18px',
+      flex: '1 1 150px',
+      padding: '18px 16px',
       borderRadius: 'var(--radius-md)',
       border: `2px solid ${isSelected ? activeColor : 'var(--border-color)'}`,
       background: isSelected ? 'var(--bg-card-alt)' : 'var(--bg-primary)',
       color: isSelected ? activeColor : 'var(--text-primary)',
-      fontSize: '1.05rem',
+      fontSize: '1rem',
       fontWeight: 700,
       cursor: 'pointer',
       transition: 'all 0.2s ease',
@@ -20,7 +20,7 @@ const TrueFalse = ({ selectedAnswer, onAnswer }) => {
   };
 
   return (
-    <div style={{ display: 'flex', gap: '16px' }}>
+    <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
       <button type="button" style={getStyle('true')} onClick={() => onAnswer('true')}>
         ✓ ĐÚNG (TRUE)
       </button>

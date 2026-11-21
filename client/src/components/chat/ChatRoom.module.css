@@ -332,4 +332,29 @@
 .guestBtns {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .chatContainer {
+    height: 520px;
+  }
+  .chatHeader {
+    padding: 12px 14px;
+  }
+  .searchInput {
+    width: 110px;
+  }
+  .messagesList {
+    padding: 14px 12px;
+  }
+  .messageItem {
+    max-width: 92%;
+  }
+  .inputArea {
+    padding: 10px 12px;
+  }
+  .sendBtn {
+    padding: 0 14px;
+  }
 }

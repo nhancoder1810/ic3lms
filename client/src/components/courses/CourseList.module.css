@@ -8,19 +8,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .searchInput {
   flex: 1;
-  min-width: 260px;
+  min-width: min(100%, 240px);
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 10px 16px;
+  padding: 10px 14px;
+  min-height: 40px;
   color: var(--text-primary);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   outline: none;
   box-shadow: var(--card-shadow);
   transition: border-color 0.2s;
@@ -40,11 +41,13 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
-  padding: 9px 16px;
+  padding: 8px 14px;
+  min-height: 36px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s;
 }
 
@@ -65,15 +68,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
 }
 
 .empty {
   background: var(--bg-card);
   border: 1px dashed var(--border-color);
   border-radius: var(--radius-md);
-  padding: 48px 24px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -84,7 +87,17 @@
 }
 
 .emptyText {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .searchInput {
+    width: 100%;
+  }
 }

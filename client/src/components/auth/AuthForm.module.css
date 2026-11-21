@@ -123,6 +123,16 @@
 .quickBtns {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .formCard {
+    padding: 22px 16px;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
 }
 
 .quickBtn {

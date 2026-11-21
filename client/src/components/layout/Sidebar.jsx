@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa';
 import styles from './Sidebar.module.css';
 
-export default function Sidebar({ isOpen }) {
+export default function Sidebar({ isOpen, onLinkClick }) {
   const { user } = useAuth();
 
   if (!user) return null;
@@ -27,6 +27,7 @@ export default function Sidebar({ isOpen }) {
           <>
             <NavLink
               to="/admin/dashboard"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaTachometerAlt className={styles.icon} />
@@ -34,6 +35,7 @@ export default function Sidebar({ isOpen }) {
             </NavLink>
             <NavLink
               to="/admin/users"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaUsers className={styles.icon} />
@@ -41,6 +43,7 @@ export default function Sidebar({ isOpen }) {
             </NavLink>
             <NavLink
               to="/admin/courses"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaBook className={styles.icon} />
@@ -53,6 +56,7 @@ export default function Sidebar({ isOpen }) {
           <>
             <NavLink
               to="/teacher/dashboard"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaTachometerAlt className={styles.icon} />
@@ -60,6 +64,7 @@ export default function Sidebar({ isOpen }) {
             </NavLink>
             <NavLink
               to="/courses"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaBook className={styles.icon} />
@@ -72,6 +77,7 @@ export default function Sidebar({ isOpen }) {
           <>
             <NavLink
               to="/student/dashboard"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaTachometerAlt className={styles.icon} />
@@ -79,6 +85,7 @@ export default function Sidebar({ isOpen }) {
             </NavLink>
             <NavLink
               to="/courses"
+              onClick={onLinkClick}
               className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
             >
               <FaBook className={styles.icon} />
@@ -89,6 +96,7 @@ export default function Sidebar({ isOpen }) {
 
         <NavLink
           to="/quizzes"
+          onClick={onLinkClick}
           className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
         >
           <FaClipboardCheck className={styles.icon} />
@@ -99,6 +107,7 @@ export default function Sidebar({ isOpen }) {
 
         <NavLink
           to="/leaderboard"
+          onClick={onLinkClick}
           className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
         >
           <FaTrophy className={styles.icon} />
@@ -107,6 +116,7 @@ export default function Sidebar({ isOpen }) {
 
         <NavLink
           to="/chat"
+          onClick={onLinkClick}
           className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
         >
           <FaComments className={styles.icon} />
@@ -115,6 +125,7 @@ export default function Sidebar({ isOpen }) {
 
         <NavLink
           to="/profile"
+          onClick={onLinkClick}
           className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
         >
           <FaAward className={styles.icon} />
