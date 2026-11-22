@@ -6,34 +6,38 @@
   top: 0;
   z-index: 1000;
   box-shadow: var(--card-shadow);
+  width: 100%;
+  max-width: 100vw;
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .navInner {
-  height: 64px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   max-width: 1440px;
   margin: 0 auto;
-  gap: 12px;
+  gap: 10px;
+  width: 100%;
 }
 
 .navLeft {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
+  flex: 1;
 }
 
 .menuBtn {
   background: var(--bg-card-alt);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   border: 1px solid var(--border-color);
   font-size: 1rem;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -52,18 +56,19 @@
   gap: 10px;
   text-decoration: none;
   min-width: 0;
+  overflow: hidden;
 }
 
 .brandIcon {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 10px;
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
   flex-shrink: 0;
 }
@@ -72,28 +77,34 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
 }
 
 .brandTitle {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.2;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brandSub {
-  font-size: 0.73rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .navLink {
@@ -103,7 +114,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 8px 13px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   white-space: nowrap;
   transition: all 0.2s;
@@ -122,7 +133,7 @@
 .navRight {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
@@ -134,8 +145,8 @@
   background: var(--bg-card-alt);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  padding: 7px 12px;
-  min-height: 36px;
+  padding: 6px 12px;
+  height: 36px;
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   font-weight: 600;
@@ -166,7 +177,7 @@
 .userProfile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   position: relative;
 }
 
@@ -201,7 +212,7 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   transition: all 0.2s;
@@ -213,8 +224,8 @@
 }
 
 .avatar {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 2px solid var(--accent-primary);
   background: var(--bg-card-alt);
@@ -222,10 +233,10 @@
 }
 
 .userName {
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-primary);
-  max-width: 140px;
+  max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -233,13 +244,14 @@
 
 .dropdownMenu {
   position: absolute;
-  top: 48px;
+  top: 44px;
   right: 0;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--card-shadow-hover);
-  width: 225px;
+  width: 220px;
+  max-width: calc(100vw - 24px);
   padding: 8px 0;
   z-index: 1002;
 }
@@ -252,6 +264,8 @@
   font-weight: 700;
   color: var(--text-primary);
   font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dropdownRole {
@@ -301,9 +315,9 @@
 }
 
 .authBtn {
-  padding: 8px 14px;
+  padding: 7px 14px;
   min-height: 36px;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
 }
 
 .mobileMenuBtn {
@@ -311,8 +325,8 @@
   background: var(--bg-card-alt);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   align-items: center;
   justify-content: center;
@@ -353,7 +367,7 @@
   border-top: 1px solid var(--border-color);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .statsPill,
   .userName {
     display: none;
@@ -362,7 +376,7 @@
 
 @media (max-width: 960px) {
   .navInner {
-    padding: 0 16px;
+    padding: 0 14px;
   }
   .navLinks {
     display: none;
@@ -377,7 +391,23 @@
 
 @media (max-width: 600px) {
   .navInner {
-    padding: 0 12px;
+    height: 56px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .navLeft {
+    gap: 8px;
+  }
+  .brand {
+    gap: 8px;
+  }
+  .brandIcon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  .brandTitle {
+    font-size: 0.92rem;
   }
   .brandSub {
     display: none;
@@ -389,6 +419,20 @@
     display: none;
   }
   .themeToggleBtn {
-    padding: 7px 10px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+  }
+  .menuBtn,
+  .mobileMenuBtn {
+    width: 34px;
+    height: 34px;
+  }
+  .avatarWrap {
+    padding: 2px;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
   }
 }

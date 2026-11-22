@@ -3,6 +3,7 @@ import ChatRoom from '../components/chat/ChatRoom';
 import { chatService } from '../services/chatService';
 import { useAuth } from '../context/AuthContext';
 import { FaComments, FaLayerGroup, FaPlus, FaChalkboardTeacher, FaCircle } from 'react-icons/fa';
+import styles from './ChatPage.module.css';
 
 const DEFAULT_ROOMS = [
   {
@@ -79,31 +80,15 @@ export default function ChatPage() {
   const activeRoomInfo = rooms.find((r) => r.id === currentRoom) || DEFAULT_ROOMS[0];
 
   return (
-    <div
-      style={{
-        maxWidth: '1250px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-        gap: '20px',
-        alignItems: 'start',
-      }}
-    >
+    <div className={styles.pageGrid}>
       {/* Left Sidebar: Channels & Online Support */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '16px',
-          gridColumn: 'span 1',
-        }}
-      >
+      <div className={styles.leftCol}>
         <div
           style={{
             background: 'var(--bg-card)',
             border: '1px solid var(--border-color)',
             borderRadius: 'var(--radius-md)',
-            padding: '18px',
+            padding: '16px',
             display: 'flex',
             flexDirection: 'column',
             gap: '10px',
@@ -126,7 +111,7 @@ export default function ChatPage() {
                 gap: '8px',
                 color: 'var(--accent-primary)',
                 fontWeight: 700,
-                fontSize: '0.88rem',
+                fontSize: '0.86rem',
               }}
             >
               <FaLayerGroup /> KÊNH THẢO LUẬN LỚP
@@ -171,7 +156,11 @@ export default function ChatPage() {
                   fontSize: '0.82rem',
                 }}
               />
-              <button type="submit" className="btn-cyber" style={{ padding: '6px 12px', fontSize: '0.78rem', minHeight: '34px' }}>
+              <button
+                type="submit"
+                className="btn-cyber"
+                style={{ padding: '6px 12px', fontSize: '0.78rem', minHeight: '34px' }}
+              >
                 Tạo
               </button>
             </form>
@@ -185,7 +174,7 @@ export default function ChatPage() {
                 background: currentRoom === r.id ? 'rgba(37, 99, 235, 0.1)' : 'var(--bg-card-alt)',
                 border: `1px solid ${currentRoom === r.id ? 'var(--accent-primary)' : 'var(--border-color)'}`,
                 color: currentRoom === r.id ? 'var(--accent-primary)' : 'var(--text-secondary)',
-                padding: '11px 13px',
+                padding: '10px 12px',
                 borderRadius: 'var(--radius-sm)',
                 textAlign: 'left',
                 display: 'flex',
@@ -194,7 +183,7 @@ export default function ChatPage() {
                 gap: '8px',
                 cursor: 'pointer',
                 fontWeight: 600,
-                fontSize: '0.86rem',
+                fontSize: '0.85rem',
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -211,7 +200,7 @@ export default function ChatPage() {
             background: 'var(--bg-card)',
             border: '1px solid var(--border-color)',
             borderRadius: 'var(--radius-md)',
-            padding: '18px',
+            padding: '16px',
             boxShadow: 'var(--card-shadow)',
             display: 'flex',
             flexDirection: 'column',
@@ -247,7 +236,7 @@ export default function ChatPage() {
       </div>
 
       {/* Main Chat Room */}
-      <div style={{ gridColumn: 'span 2', minWidth: 0 }}>
+      <div className={styles.mainCol}>
         <ChatRoom currentRoom={currentRoom} roomInfo={activeRoomInfo} />
       </div>
     </div>

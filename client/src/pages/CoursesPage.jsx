@@ -115,7 +115,7 @@ const CoursesPage = () => {
           background: 'var(--bg-card)',
           border: '1px solid var(--border-color)',
           borderRadius: 'var(--radius-lg)',
-          padding: '28px 32px',
+          padding: 'clamp(16px, 3vw, 28px)',
           boxShadow: 'var(--card-shadow)',
           marginTop: '12px',
           display: 'flex',

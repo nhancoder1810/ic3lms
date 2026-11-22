@@ -7,44 +7,22 @@ import { useAuth } from '../../context/AuthContext';
 import styles from './Layout.module.css';
 
 export default function Layout() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    return typeof window !== 'undefined' ? window.innerWidth > 960 : true;
-  });
-  const [isMobileView, setIsMobileView] = useState(() => {
-    return typeof window !== 'undefined' ? window.innerWidth <= 960 : false;
-  });
+  // Always keep sidebar hidden by default; only open when user explicitly clicks menu button
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { isAuthenticated } = useAuth();
   const location = useLocation();
 
+  // Auto-close sidebar whenever route changes or right after user logs in/out
   useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth <= 960;
-      setIsMobileView(mobile);
-      if (mobile) {
-        setIsSidebarOpen(false);
-      } else {
-        setIsSidebarOpen(true);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Auto-close sidebar on route change when on mobile/tablet
-  useEffect(() => {
-    if (isMobileView) {
-      setIsSidebarOpen(false);
-    }
-  }, [location.pathname, isMobileView]);
+    setIsSidebarOpen(false);
+  }, [location.pathname, isAuthenticated]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  const closeMobileSidebar = () => {
-    if (isMobileView) {
-      setIsSidebarOpen(false);
-    }
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
@@ -53,9 +31,9 @@ export default function Layout() {
       <div className={styles.bodyWrap}>
         {isAuthenticated && (
           <>
-            <Sidebar isOpen={isSidebarOpen} onLinkClick={closeMobileSidebar} />
-            {isMobileView && isSidebarOpen && (
-              <div className={styles.mobileBackdrop} onClick={closeMobileSidebar} />
+            <Sidebar isOpen={isSidebarOpen} onLinkClick={closeSidebar} />
+            {isSidebarOpen && (
+              <div className={styles.mobileBackdrop} onClick={closeSidebar} />
             )}
           </>
         )}

@@ -31,7 +31,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
   useEffect(() => {
     setMobileNavOpen(false);
     setDropdownOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, isAuthenticated]);
 
   const handleLogout = async () => {
     await logout();
@@ -46,7 +46,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
             <button
               className={styles.menuBtn}
               onClick={toggleSidebar}
-              title="Ẩn/Hiện thanh menu"
+              title="Mở/Đóng danh mục điều hướng"
               aria-label="Toggle Sidebar"
             >
               {isSidebarOpen ? <FaTimes /> : <FaBars />}
@@ -188,30 +188,31 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               )}
             </div>
           ) : (
-            <div className={styles.authButtons}>
-              <Link to="/login" className={`btn-neon ${styles.authBtn}`}>
-                Đăng nhập
-              </Link>
-              <Link to="/register" className={`btn-cyber ${styles.authBtn}`}>
-                Đăng ký
-              </Link>
-            </div>
+            <>
+              <div className={styles.authButtons}>
+                <Link to="/login" className={`btn-neon ${styles.authBtn}`}>
+                  Đăng nhập
+                </Link>
+                <Link to="/register" className={`btn-cyber ${styles.authBtn}`}>
+                  Đăng ký
+                </Link>
+              </div>
+              {/* Guest Mobile Menu Trigger (only shown when not logged in on <= 960px) */}
+              <button
+                className={styles.mobileMenuBtn}
+                onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                title="Mở menu điều hướng"
+                aria-label="Mở menu điều hướng"
+              >
+                {mobileNavOpen ? <FaTimes /> : <FaBars />}
+              </button>
+            </>
           )}
-
-          {/* Mobile Nav Menu Trigger (visible on <= 960px) */}
-          <button
-            className={styles.mobileMenuBtn}
-            onClick={() => setMobileNavOpen(!mobileNavOpen)}
-            title="Mở menu điều hướng"
-            aria-label="Mở menu điều hướng"
-          >
-            {mobileNavOpen ? <FaTimes /> : <FaBars />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown Navigation Drawer (<= 960px) */}
-      {mobileNavOpen && (
+      {/* Guest Mobile Dropdown Navigation Drawer (<= 960px) */}
+      {!isAuthenticated && mobileNavOpen && (
         <div className={styles.mobileDrawer}>
           <Link to="/" className={styles.mobileNavLink}>
             <FaHome /> Trang chủ
@@ -229,16 +230,14 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
             <FaComments /> Phòng thảo luận
           </Link>
 
-          {!isAuthenticated && (
-            <div className={styles.mobileAuthActions}>
-              <Link to="/login" className="btn-neon" style={{ flex: 1 }}>
-                Đăng nhập
-              </Link>
-              <Link to="/register" className="btn-cyber" style={{ flex: 1 }}>
-                Đăng ký
-              </Link>
-            </div>
-          )}
+          <div className={styles.mobileAuthActions}>
+            <Link to="/login" className="btn-neon" style={{ flex: 1 }}>
+              Đăng nhập
+            </Link>
+            <Link to="/register" className="btn-cyber" style={{ flex: 1 }}>
+              Đăng ký
+            </Link>
+          </div>
         </div>
       )}
     </header>

@@ -9,6 +9,8 @@ import {
   FaTrophy,
   FaComments,
   FaAward,
+  FaTimes,
+  FaHome,
 } from 'react-icons/fa';
 import styles from './Sidebar.module.css';
 
@@ -21,8 +23,30 @@ export default function Sidebar({ isOpen, onLinkClick }) {
 
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : styles.collapsed}`}>
-      <div className={styles.sectionTitle}>Không gian học tập</div>
+      <div className={styles.sidebarHeader}>
+        <span className={styles.sectionTitle}>Danh mục điều hướng</span>
+        <button
+          type="button"
+          className={styles.closeBtn}
+          onClick={onLinkClick}
+          title="Đóng thanh bên"
+          aria-label="Đóng thanh bên"
+        >
+          <FaTimes />
+        </button>
+      </div>
+
       <nav className={styles.menu}>
+        <NavLink
+          to="/"
+          end
+          onClick={onLinkClick}
+          className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ''}`}
+        >
+          <FaHome className={styles.icon} />
+          <span className={styles.label}>Trang chủ</span>
+        </NavLink>
+
         {role === 'admin' && (
           <>
             <NavLink
@@ -103,7 +127,7 @@ export default function Sidebar({ isOpen, onLinkClick }) {
           <span className={styles.label}>Đề thi & Ôn luyện</span>
         </NavLink>
 
-        <div className={styles.sectionTitle}>Cộng đồng & Thành tích</div>
+        <div className={styles.sectionDividerTitle}>Cộng đồng & Thành tích</div>
 
         <NavLink
           to="/leaderboard"
